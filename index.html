@@ -35,17 +35,27 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  border-radius: 8px 8px 0 0; /* top-left and top-right rounded only */
+  border-radius: 8px 8px 0 0;
 }
-    .collapsible::after {
+
+/* Arrow icon */
+.collapsible::after {
   content: '▾';
   margin-left: auto;
+  font-size: 2.5rem; /* 5× normal size */
   transition: transform 0.2s ease;
 }
 
+/* Arrow flips up when active */
 .collapsible.active::after {
   transform: rotate(180deg);
 }
+
+/* Rounded corners all around when not active */
+.collapsible:not(.active) {
+  border-radius: 8px;
+}
+
 
 
     .active, .collapsible:hover {
