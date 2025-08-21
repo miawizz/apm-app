@@ -22,21 +22,22 @@
     .strategy {
       margin-bottom: 1rem;
     }
-    .collapsible {
-      background-color: white;
-      color: #1a0b8b;
-      cursor: pointer;
-      padding: 12px;
-      width: 100%;
-      border: none;
-      text-align: left;
-      outline: none;
-      font-size: 1.1rem;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      border-radius: 8px;
-    }
+.collapsible {
+  background-color: white;
+  color: #1a0b8b;
+  cursor: pointer;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 8px 8px 0 0; /* top-left and top-right rounded only */
+}
+
     .active, .collapsible:hover {
       filter: brightness(95%);
     }
