@@ -37,6 +37,16 @@
   gap: 8px;
   border-radius: 8px 8px 0 0; /* top-left and top-right rounded only */
 }
+    .collapsible::after {
+  content: '▾';
+  margin-left: auto;
+  transition: transform 0.2s ease;
+}
+
+.collapsible.active::after {
+  transform: rotate(180deg);
+}
+
 
     .active, .collapsible:hover {
       filter: brightness(95%);
