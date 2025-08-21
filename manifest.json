@@ -3,12 +3,12 @@
   "short_name": "Play Mode",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#ff56c1",
-  "theme_color": "#00b4d8",
+  "background_color": "#3c2daf",
+  "theme_color": "#3c2daf",
   "icons": [
     {
-      "src": "activate-play-mode-icon.png",
-      "sizes": "192x192",
+      "src": "apple-touch-icon.png",
+      "sizes": "512x512",
       "type": "image/png"
     }
   ]
