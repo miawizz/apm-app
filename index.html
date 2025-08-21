@@ -1,276 +1,231 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Activate Play Mode</title>
-  <link rel="manifest" href="manifest.json" />
-  <link rel="icon" type="image/png" href="activate-play-mode-icon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="icons/1.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   <style>
     body {
-      margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: #fff0f5;
-      color: #333;
+      background-color: #3c2daf;
+      color: white;
+      margin: 0;
+      padding: 0;
     }
-    .screen {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 2rem;
-      text-align: center;
+    .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 1rem;
     }
-    .logo {
-      width: 100px;
+    .strategy {
       margin-bottom: 1rem;
     }
-    h1 {
-      font-size: 1.8rem;
-      margin-bottom: 0.5rem;
-    }
-    .message, .instructions {
-      font-size: 1rem;
-      margin-bottom: 1.5rem;
-      max-width: 600px;
-    }
-    button {
-      background-color: #6db3c1;
-      color: #fff;
-      border: none;
-      padding: 1rem 1.5rem;
-      font-size: 1rem;
-      cursor: pointer;
-      border-radius: 8px;
-      font-family: 'Poppins', sans-serif;
-    }
     .collapsible {
-      background-color: #6a88c4;
-      color: white;
+      background-color: white;
+      color: #1a0b8b;
       cursor: pointer;
-      padding: 1rem;
+      padding: 12px;
       width: 100%;
       border: none;
       text-align: left;
       outline: none;
       font-size: 1.1rem;
-      margin-top: 1rem;
-      border-radius: 6px;
-      font-family: 'Poppins', sans-serif;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 8px;
+    }
+    .active, .collapsible:hover {
+      filter: brightness(95%);
     }
     .content {
-      padding: 0 1rem 1rem;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease-out;
-      background: #f4f9ff;
-      margin-bottom: 1rem;
-      border-radius: 6px;
-      text-align: left;
-    }
-    .content p, .content ul {
-      font-size: 0.95rem;
-    }
-    .hidden {
+      background-color: #f6e395;
+      padding: 10px 16px;
       display: none;
+      overflow: hidden;
+      border-radius: 0 0 8px 8px;
+      color: #1a0b8b;
     }
     video {
-      border-radius: 6px;
-      margin-top: 0.5rem;
       width: 100%;
+      margin-top: 10px;
+      border-radius: 8px;
+    }
+    .strategy-icon {
+      height: 28px;
+      vertical-align: middle;
+      margin-right: 8px;
     }
   </style>
 </head>
 <body>
-  <div id="welcome" class="screen">
-    <img src="activate-play-mode-icon.png" alt="Activate Play Mode Logo" class="logo" />
-    <p class="message">Thanks for supporting this work — please keep this private and do not share. This is for Activate Play Mode customers only.</p>
-    <button onclick="enterApp()">Enter</button>
-  </div>
-
-  <div id="app" class="screen hidden">
-    <img src="activate-play-mode-icon.png" alt="Activate Play Mode Logo" class="logo" />
+  <div class="container">
     <h1>Activate Play Mode</h1>
-    <p class="instructions">
-      Tap on any strategy below to view a quick summary, playful examples, and a short demo video.<br />
-      These ideas work best when the stakes are low and the vibe is calm — have fun exploring!
-    </p>
+    <p>Tap a strategy to view examples and watch a short video.</p>
 
-<!-- STRATEGY BLOCKS BEGIN -->
-<!-- Strategy 1 -->
-<div class="strategy">
-  <button class="collapsible"><img src="icons/1.png" alt="Personification icon" style="height: 20px; vertical-align: middle; margin-right: 8px;" />Personification</button>
-  <div class="content">
-    <p><strong>What it is:</strong> Bringing inanimate objects to life — like a toy, snack, or sock — to redirect energy with silliness.</p>
-    <ul>
-      <li>Toothbrush "cleaning ladies" begging not to work</li>
-      <li>Broccoli yelling "Just a trim!"</li>
-      <li>Shoes that want to dance</li>
-    </ul>
-    <video controls><source src="videos/1 - Personification.mp4" type="video/mp4"></video>
-  </div>
-</div>
-<!-- Strategy 2 -->
-<div class="strategy">
-  <button class="collapsible"><img src="icons/2.png" alt="Mechanical Play icon" style="height: 20px; vertical-align: middle; margin-right: 8px;" />Mechanical Play</button>
-  <div class="content">
-    <p><strong>What it is:</strong> Pretending to be a robot, machine, or voice assistant.</p>
-    <ul>
-      <li>Rewind button for do-overs</li>
-      <li>GPS voice giving instructions</li>
-      <li>"Volume knob" for behavior</li>
-    </ul>
-    <video controls><source src="videos/2 - Mechanical Play.mp4" type="video/mp4"></video>
-  </div>
-</div>
-<!-- Strategy 3 -->
-<div class="strategy">
-  <button class="collapsible"><img src="icons/3.png" alt="Playing the Opposite icon" style="height: 20px; vertical-align: middle; margin-right: 8px;" />Playing the Opposite</button>
-  <div class="content">
-    <p><strong>What it is:</strong> Acting shocked or upset when your child does exactly what you want.</p>
-    <ul>
-      <li>"Don’t eat that broccoli while I’m not looking!"</li>
-      <li>"If you take that medicine, I’ll moo like a cow!"</li>
-      <li>"Nooo, don’t smile at me!"</li>
-    </ul>
-    <video controls><source src="videos/3 - Playing the Opposite.mp4" type="video/mp4"></video>
-  </div>
-</div>
-<!-- Strategy 4 -->
-<div class="strategy">
-  <button class="collapsible"><img src="icons/4.png" alt="Challenges & Gamifying icon" style="height: 20px; vertical-align: middle; margin-right: 8px;" />Challenges & Gamifying</button>
-  <div class="content">
-    <p><strong>What it is:</strong> Turning tasks into a game, challenge, or silly contest.</p>
-    <ul>
-      <li>Race against the clean-up song</li>
-      <li>Who can blow the biggest bubble?</li>
-      <li>Silent screaming challenge</li>
-    </ul>
-    <video controls><source src="videos/4 - Challenges and Gamifying.mp4" type="video/mp4"></video>
-  </div>
-</div>
-<!-- Strategy 5 -->
-<div class="strategy">
-  <button class="collapsible"><img src="icons/5.png" alt="Magic, Mystery, & Confusion icon" style="height: 20px; vertical-align: middle; margin-right: 8px;" />Magic, Mystery, & Confusion</button>
-  <div class="content">
-    <p><strong>What it is:</strong> Pretending something magical or mysterious is happening.</p>
-    <ul>
-      <li>Freeze spells or floating objects</li>
-      <li>Lotion disappears with a gasp</li>
-      <li>Force field until they say "please"</li>
-    </ul>
-    <video controls><source src="videos/5 - Mystery Magic and Confusion.mp4" type="video/mp4"></video>
-  </div>
-</div>
-<!-- Strategy 6 -->
-<div class="strategy">
-  <button class="collapsible"><img src="icons/6.png" alt="Make it a Musical icon" style="height: 20px; vertical-align: middle; margin-right: 8px;" />Make it a Musical</button>
-  <div class="content">
-    <p><strong>What it is:</strong> Turning routines into musical numbers, chants, or dances.</p>
-    <ul>
-      <li>Opera singing instead of yelling</li>
-      <li>Silent disco transitions</li>
-      <li>Toothbrushing jingles</li>
-    </ul>
-    <video controls><source src="videos/6 - Make it a Musical.mp4" type="video/mp4"></video>
-  </div>
-</div>
-<!-- Strategy 7 -->
-<div class="strategy">
-  <button class="collapsible"><img src="icons/7.png" alt="Characters & Role Play icon" style="height: 20px; vertical-align: middle; margin-right: 8px;" />Characters & Role Play</button>
-  <div class="content">
-    <p><strong>What it is:</strong> Taking on a silly persona or letting them do it instead of just giving directions.</p>
-    <ul>
-      <li>Butt-Wiper 3000</li>
-      <li>Villain trying to vacuum up toys</li>
-      <li>Announcer at the “bedtime Olympics”</li>
-    </ul>
-    <video controls><source src="videos/7 - Characters and Role Play.mp4" type="video/mp4"></video>
-  </div>
-</div>
-<!-- Strategy 8 -->
-<div class="strategy">
-  <button class="collapsible"><img src="icons/8.png" alt="Storytelling icon" style="height: 20px; vertical-align: middle; margin-right: 8px;" />Storytelling</button>
-  <div class="content">
-    <p><strong>What it is:</strong> Narrating real life like an adventure or telling silly made-up stories.</p>
-    <ul>
-      <li>The panda mom who roared too loud</li>
-      <li>Fortunately/unfortunately games</li>
-      <li>Swamp alligator with stinky breath</li>
-    </ul>
-    <video controls><source src="videos/8 - Storytelling.mp4" type="video/mp4"></video>
-  </div>
-</div>
-<!-- Strategy 9 -->
-<div class="strategy">
-  <button class="collapsible"><img src="icons/9.png" alt="Romanticizing the Mundane icon" style="height: 20px; vertical-align: middle; margin-right: 8px;" />Romanticizing the Mundane</button>
-  <div class="content">
-    <p><strong>What it is:</strong> Using dramatic, poetic, or VIP language to frame boring stuff as fun or fancy.</p>
-    <ul>
-      <li>“Welcome to the bedtime spa”</li>
-      <li>“We’re entering the grocery gauntlet!”</li>
-      <li>“Sir Broccoli must save the castle!”</li>
-    </ul>
-    <video controls><source src="videos/9 - Romanticizing the Mundane.mp4" type="video/mp4"></video>
-  </div>
-</div>
-<!-- Strategy 10 -->
-<div class="strategy">
-  <button class="collapsible"><img src="icons/10.png" alt="Body & Breath icon" style="height: 20px; vertical-align: middle; margin-right: 8px;" />Body & Breath</button>
-  <div class="content">
-    <p><strong>What it is:</strong> Regulating through movement, breathing, or silly physical contact.</p>
-    <ul>
-      <li>Power-on shoulders: scrunch/drop</li>
-      <li>Blow each other across the room</li>
-      <li>Lemon face / orange face</li>
-    </ul>
-    <video controls><source src="videos/10 - Body and Breath.mp4" type="video/mp4"></video>
-  </div>
-</div>
-<!-- Strategy 11 -->
-<div class="strategy">
-  <button class="collapsible"><img src="icons/11.png" alt="General Nonsense icon" style="height: 20px; vertical-align: middle; margin-right: 8px;" />General Nonsense</button>
-  <div class="content">
-    <p><strong>What it is:</strong> Gibberish, silly voices, fart monsters — for interrupting tension and reconnecting.</p>
-    <ul>
-      <li>Banana phone conversation</li>
-      <li>1, 2, 3… FART! instead of "cheese"</li>
-      <li>“What have you DONE?!” in goofy voice</li>
-    </ul>
-    <video controls><source src="videos/11 - General Nonsense.mp4" type="video/mp4"></video>
-  </div>
-</div>
-<!-- STRATEGY BLOCKS END -->
+    <!-- STRATEGY BLOCKS BEGIN -->
 
+    <div class="strategy">
+      <button class="collapsible"><img src="icons/1.png" class="strategy-icon" alt="Personification" />Personification</button>
+      <div class="content">
+        <p><strong>What it is:</strong> Bringing inanimate objects to life — like a toy, snack, or sock — to redirect energy with silliness.</p>
+        <ul>
+          <li>Toothbrush "cleaning ladies" begging not to work</li>
+          <li>Broccoli yelling "Just a trim!"</li>
+          <li>Shoes that want to dance</li>
+        </ul>
+        <video controls><source src="videos/1 - Personification.mp4" type="video/mp4" /></video>
+      </div>
+    </div>
+
+    <div class="strategy">
+      <button class="collapsible"><img src="icons/2.png" class="strategy-icon" alt="Mechanical Play" />Mechanical Play</button>
+      <div class="content">
+        <p><strong>What it is:</strong> Pretending to be a robot, machine, or voice assistant.</p>
+        <ul>
+          <li>Rewind button for do-overs</li>
+          <li>GPS voice giving instructions</li>
+          <li>"Volume knob" for behavior</li>
+        </ul>
+        <video controls><source src="videos/2 - Mechanical Play.mp4" type="video/mp4" /></video>
+      </div>
+    </div>
+
+    <div class="strategy">
+      <button class="collapsible"><img src="icons/3.png" class="strategy-icon" alt="Playing the Opposite" />Playing the Opposite</button>
+      <div class="content">
+        <p><strong>What it is:</strong> Acting shocked or upset when your child does exactly what you want.</p>
+        <ul>
+          <li>"Don’t eat that broccoli while I’m not looking!"</li>
+          <li>"If you take that medicine, I’ll moo like a cow!"</li>
+          <li>"Nooo, don’t smile at me!"</li>
+        </ul>
+        <video controls><source src="videos/3 - Playing the Opposite.mp4" type="video/mp4" /></video>
+      </div>
+    </div>
+
+    <div class="strategy">
+      <button class="collapsible"><img src="icons/4.png" class="strategy-icon" alt="Challenges & Gamifying" />Challenges & Gamifying</button>
+      <div class="content">
+        <p><strong>What it is:</strong> Turning tasks into a game, challenge, or silly contest.</p>
+        <ul>
+          <li>Race against the clean-up song</li>
+          <li>Who can blow the biggest bubble?</li>
+          <li>Silent screaming challenge</li>
+        </ul>
+        <video controls><source src="videos/4 - Challenges and Gamifying.mp4" type="video/mp4" /></video>
+      </div>
+    </div>
+
+    <div class="strategy">
+      <button class="collapsible"><img src="icons/5.png" class="strategy-icon" alt="Magic, Mystery, & Confusion" />Magic, Mystery, & Confusion</button>
+      <div class="content">
+        <p><strong>What it is:</strong> Pretending something magical or mysterious is happening.</p>
+        <ul>
+          <li>Freeze spells or floating objects</li>
+          <li>Lotion disappears with a gasp</li>
+          <li>Force field until they say "please"</li>
+        </ul>
+        <video controls><source src="videos/5 - Mystery Magic and Confusion.mp4" type="video/mp4" /></video>
+      </div>
+    </div>
+
+    <div class="strategy">
+      <button class="collapsible"><img src="icons/6.png" class="strategy-icon" alt="Make it a Musical" />Make it a Musical</button>
+      <div class="content">
+        <p><strong>What it is:</strong> Turning routines into musical numbers, chants, or dances.</p>
+        <ul>
+          <li>Opera singing instead of yelling</li>
+          <li>Silent disco transitions</li>
+          <li>Toothbrushing jingles</li>
+        </ul>
+        <video controls><source src="videos/6 - Make it a Musical.mp4" type="video/mp4" /></video>
+      </div>
+    </div>
+
+    <div class="strategy">
+      <button class="collapsible"><img src="icons/7.png" class="strategy-icon" alt="Characters & Role Play" />Characters & Role Play</button>
+      <div class="content">
+        <p><strong>What it is:</strong> Taking on a silly persona or letting them do it instead of just giving directions.</p>
+        <ul>
+          <li>Butt-Wiper 3000</li>
+          <li>Villain trying to vacuum up toys</li>
+          <li>Announcer at the “bedtime Olympics”</li>
+        </ul>
+        <video controls><source src="videos/7 - Characters and Role Play.mp4" type="video/mp4" /></video>
+      </div>
+    </div>
+
+    <div class="strategy">
+      <button class="collapsible"><img src="icons/8.png" class="strategy-icon" alt="Storytelling" />Storytelling</button>
+      <div class="content">
+        <p><strong>What it is:</strong> Narrating real life like an adventure or telling silly made-up stories.</p>
+        <ul>
+          <li>The panda mom who roared too loud</li>
+          <li>Fortunately/unfortunately games</li>
+          <li>Swamp alligator with stinky breath</li>
+        </ul>
+        <video controls><source src="videos/8 - Storytelling.mp4" type="video/mp4" /></video>
+      </div>
+    </div>
+
+    <div class="strategy">
+      <button class="collapsible"><img src="icons/9.png" class="strategy-icon" alt="Romanticizing the Mundane" />Romanticizing the Mundane</button>
+      <div class="content">
+        <p><strong>What it is:</strong> Using dramatic, poetic, or VIP language to frame boring stuff as fun or fancy.</p>
+        <ul>
+          <li>“Welcome to the bedtime spa”</li>
+          <li>“We’re entering the grocery gauntlet!”</li>
+          <li>“Sir Broccoli must save the castle!”</li>
+        </ul>
+        <video controls><source src="videos/9 - Romanticizing the Mundane.mp4" type="video/mp4" /></video>
+      </div>
+    </div>
+
+    <div class="strategy">
+      <button class="collapsible"><img src="icons/10.png" class="strategy-icon" alt="Body & Breath" />Body & Breath</button>
+      <div class="content">
+        <p><strong>What it is:</strong> Regulating through movement, breathing, or silly physical contact.</p>
+        <ul>
+          <li>Power-on shoulders: scrunch/drop</li>
+          <li>Blow each other across the room</li>
+          <li>Lemon face / orange face</li>
+        </ul>
+        <video controls><source src="videos/10 - Body and Breath.mp4" type="video/mp4" /></video>
+      </div>
+    </div>
+
+    <div class="strategy">
+      <button class="collapsible"><img src="icons/11.png" class="strategy-icon" alt="General Nonsense" />General Nonsense</button>
+      <div class="content">
+        <p><strong>What it is:</strong> Gibberish, silly voices, fart monsters — for interrupting tension and reconnecting.</p>
+        <ul>
+          <li>Banana phone conversation</li>
+          <li>1, 2, 3… FART! instead of "cheese"</li>
+          <li>“What have you DONE?!” in goofy voice</li>
+        </ul>
+        <video controls><source src="videos/11 - General Nonsense.mp4" type="video/mp4" /></video>
+      </div>
+    </div>
+
+    <!-- STRATEGY BLOCKS END -->
   </div>
 
   <script>
-    function enterApp() {
-      localStorage.setItem("apmUserVerified", "true");
-      document.getElementById("welcome").classList.add("hidden");
-      document.getElementById("app").classList.remove("hidden");
-    }
-    document.addEventListener("DOMContentLoaded", function () {
-      const hasAccess = localStorage.getItem("apmUserVerified") === "true";
-      if (hasAccess) {
-        document.getElementById("welcome").classList.add("hidden");
-        document.getElementById("app").classList.remove("hidden");
-      }
-      const collapsibles = document.querySelectorAll(".collapsible");
-      collapsibles.forEach(button => {
-        button.addEventListener("click", function () {
-          this.classList.toggle("active");
-          const content = this.nextElementSibling;
-          if (content.style.maxHeight) {
-            content.style.maxHeight = null;
-          } else {
-            content.style.maxHeight = content.scrollHeight + "px";
-          }
-        });
+    const coll = document.getElementsByClassName("collapsible");
+    for (let i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        const content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
       });
-    });
+    }
   </script>
 </body>
 </html>
