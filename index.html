@@ -7,8 +7,11 @@
   <meta name="apple-mobile-web-app-title" content="Play Mode" />
   <link rel="icon" href="activate-play-mode-icon.png" type="image/png" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#3c2daf" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   <style>
+    /* your styles remain unchanged */
     body {
       font-family: 'Poppins', sans-serif;
       background-color: #3c2daf;
@@ -24,42 +27,33 @@
     .strategy {
       margin-bottom: 1rem;
     }
-.collapsible {
-  background-color: white;
-  color: #1a0b8b;
-  cursor: pointer;
-  padding: 12px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 1.1rem;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  border-radius: 8px 8px 0 0;
-}
-
-/* Arrow icon */
-.collapsible::after {
-  content: '▾';
-  margin-left: auto;
-  font-size: 2.5rem; /* 5× normal size */
-  transition: transform 0.2s ease;
-}
-
-/* Arrow flips up when active */
-.collapsible.active::after {
-  transform: rotate(180deg);
-}
-
-/* Rounded corners all around when not active */
-.collapsible:not(.active) {
-  border-radius: 8px;
-}
-
-
-
+    .collapsible {
+      background-color: white;
+      color: #1a0b8b;
+      cursor: pointer;
+      padding: 12px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 8px 8px 0 0;
+    }
+    .collapsible::after {
+      content: '▾';
+      margin-left: auto;
+      font-size: 2.5rem;
+      transition: transform 0.2s ease;
+    }
+    .collapsible.active::after {
+      transform: rotate(180deg);
+    }
+    .collapsible:not(.active) {
+      border-radius: 8px;
+    }
     .active, .collapsible:hover {
       filter: brightness(95%);
     }
@@ -86,24 +80,23 @@
       margin: 1rem auto;
       max-height: 60px;
     }
-  .overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.85);
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  z-index: 9999;
-  padding: 2rem;
-  box-sizing: border-box;
-  overflow-y: auto;
-}
-
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.85);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      z-index: 9999;
+      padding: 2rem;
+      box-sizing: border-box;
+      overflow-y: auto;
+    }
     .overlay button {
       margin-top: 1rem;
       padding: 0.5rem 1rem;
@@ -116,6 +109,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <!-- Welcome Overlay -->
